@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Interface variable
 
-INTFACE=$(ip addr | grep "zt")
+INTFACE=$(ifconfig -a | sed 's/[ \t].*//;/^$/d' | grep "zt")
 
 # Color  Variables
 RESET='\033[0m'
